@@ -2,10 +2,10 @@ import model # Import the python file containing the ML model
 from flask import Flask, request, render_template,jsonify # Import flask libraries
 
 # Initialize the flask class and specify the templates directory
-app = Flask(__name__,template_folder="templates")
+app = Flask(__name__)
 
 # Default route set as 'home'
-@app.route('/home')
+@app.route('/')
 def home():
     return render_template('home.html') # Render home.html
 
@@ -27,5 +27,5 @@ def classify_type():
         return 'Error'
 
 # Run the Flask server
-if(__name__=='__main__'):
-     app.run(host = '0.0.0.0', port = 5000, debug = True)       
+if __name__ == "__main__":
+    app.run(host = '0.0.0.0', port = 5000, debug = True)   
